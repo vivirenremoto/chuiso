@@ -404,10 +404,7 @@
 
 
 
-            $("td").on("mousedown ", function (e) {
-
-
-                if (is_moving) return;
+            $("td").on("mousedown touchstart", function (e) {
 
 
 
@@ -431,7 +428,7 @@
             });
 
 
-            $("td").on("mouseup ", function (e) {
+            $("td").on("mouseup touchend", function (e) {
                 clearInterval(timer_move);
             });
 
@@ -555,11 +552,7 @@
 
             $("body").keydown(function (e) {
 
-                if (is_moving) {
-                    return;
-                }
 
-                is_moving = true;
 
 
 
@@ -641,12 +634,6 @@
 
         function selectCell(row, col) {
 
-            if (is_moving) {
-                return;
-            }
-
-            is_moving = true;
-
 
 
 
@@ -697,8 +684,16 @@
 
         }
 
+
+
+
+
         function moveLeft() {
             if (player_col > 0) {
+
+                if (is_moving) return;
+                is_moving = true;
+
                 player_col--;
                 updatePos();
             }
@@ -706,15 +701,20 @@
 
         function moveRight() {
             if (player_col < (max_col - 1)) {
+
+                if (is_moving) return;
+                is_moving = true;
+
                 player_col++;
                 updatePos();
             }
         }
         function moveUp() {
-
-
-
             if (stage[player_row][player_col] == 'S' && player_row > 0) {
+
+                if (is_moving) return;
+                is_moving = true;
+
                 player_row--;
                 updatePos();
             }
@@ -722,6 +722,10 @@
 
         function moveDown() {
             if (player_row < (max_row - 1) && stage[player_row + 1][player_col] == 'S') {
+
+                if (is_moving) return;
+                is_moving = true;
+
                 player_row++;
                 updatePos();
             }
