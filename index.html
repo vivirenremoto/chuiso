@@ -195,7 +195,7 @@
 
 
     <div id="result2"
-        style="padding:20px;font-size:50px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
+        style="padding:20px;font-size:30px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
 
 
         NO EXISTE UNA FÓRMULA MÁGICA PARA GANAR DINERO EN INTERNET, PERO SI ERES CONSTANTE Y TRABAJAS DURO EN
@@ -329,6 +329,11 @@
             is_ded = false;
             is_moving = false;
 
+
+
+
+
+
             $('table').html('');
 
             stage = stages[current_stage - 1];
@@ -357,6 +362,9 @@
                         player_row = row;
                         player_col = col;
 
+                        player_row_start = row;
+                        player_col_start = col;
+
 
                     } else if (row_value == 'S') {
                         class_name = 'stairs';
@@ -369,7 +377,13 @@
                     }
 
                     //onclick="selectCell('+row+','+col+')"
-                    html += '<td data-row="' + row + '" data-col="' + col + '"><div class="obj ' + class_name + '" >' + html_aux + '</div></td>';
+                    html += '<td data-row="' + row + '" data-col="' + col + '">';
+
+                    if (class_name != 'player') {
+                        html += '<div class="obj ' + class_name + '" >' + html_aux + '</div>';
+                    }
+
+                    html += '</td>';
                 });
 
                 html += '</tr>';
@@ -384,7 +398,13 @@
 
 
 
+            $('#game').append('<div class="obj player" ></div>');
 
+
+            $('.player').animate({
+                'top': $('table tr:eq(' + (player_row) + ') td:first').offset().top + 'px',
+                'left': $('table tr:eq(' + (player_row) + ') td:eq(' + (player_col) + ')').offset().left + 'px',
+            }, 1);
 
 
 
@@ -403,19 +423,25 @@
 
 
 
-
-            $("td").on("mousedown ", function (e) {
-
-
+            $("td").on("mousedown touchstart", function (e) {
 
 
                 var obj = $(this);
+
+                /*
+                if ($(this).find('.player').length == 1) {
+
+                    return;
+                }
+                */
+
+
 
 
                 selectCell($(obj).data('row'), $(obj).data('col'));
 
 
-
+                /*
                 timer_move = setInterval(function () {
 
                     //$(obj).click();
@@ -425,12 +451,15 @@
 
 
                 }, 500);
+                */
             });
 
 
+            /*
             $("td").on("mouseup ", function (e) {
                 clearInterval(timer_move);
             });
+            */
 
 
 
@@ -637,7 +666,7 @@
 
 
 
-            //alert(player_row+'--'+player_col);
+
             /*
             console.log('col'+player_col+'/'+col+'---row'+player_row+'/'+row);
                 if( player_col == col && player_row == row ){
@@ -674,6 +703,8 @@
                 }
                 */
 
+
+
                 if (player_col < col) {
                     moveRight();
                 } else if (player_col > col) {
@@ -700,7 +731,9 @@
         }
 
         function moveRight() {
+
             if (player_col < (max_col - 1)) {
+
 
                 if (is_moving) return;
                 is_moving = true;
