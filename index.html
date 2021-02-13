@@ -176,11 +176,11 @@
         <span style="color:#00ff00;">ENHORABUENA</span>
 
         <br>
-        HAS RECUPERADO TODOS LOS FRAGMENTOS
+        <span style="font-size:30px;">HAS RECUPERADO TODOS LOS FRAGMENTOS</span>
 
         <br><br>
 
-        <img src="static/item.png" width="200" height="200">
+        <img src="static/item.png" width="150" height="150">
 
 
         <br><br>
@@ -646,8 +646,12 @@
                 sound_item.play();
 
                 if (current_stage > stages.length) {
-                    $('#game').hide();
-                    $('#result1').show();
+
+                    setTimeout(function () {
+                        $('#game').hide();
+                        $('#result1').show();
+                    }, 1000);
+
                 } else {
 
 
