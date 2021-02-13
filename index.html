@@ -327,6 +327,7 @@
 
             got_item = false;
             is_ded = false;
+            is_moving = false;
 
             $('table').html('');
 
@@ -601,6 +602,9 @@
                 got_item = true;
                 $('.item').hide();
                 $('.door').css('background-image', "url('static/door_open.png')");
+
+
+
 
 
                 sound_door.play();
