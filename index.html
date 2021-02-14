@@ -277,7 +277,6 @@
 
 
 
-        var music_playing = false;
 
         var music = document.getElementById('music');
         music.volume = 0.5;
@@ -582,6 +581,9 @@
 
 
         function startGame() {
+
+            music.play();
+
             $('#intro').hide();
             $('#game').show();
             drawStage();
@@ -794,12 +796,6 @@
         }
 
 
-        $("body").click(function () {
-            if (!music_playing) {
-                music_playing = true;
-                music.play();
-            }
-        });
 
 
 
