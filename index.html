@@ -174,7 +174,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <br>
-        <button onclick="startGame()">EMPEZAR</button>
+        <button onclick="startGame()">JUGAR</button>
     </div>
 
 
@@ -204,26 +204,60 @@
 
     </div>
 
-
+    credits
 
     <div id="result2"
         style="padding:20px;font-size:35px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
 
 
-        NO EXISTE UNA FÓRMULA MÁGICA PARA GANAR DINERO EN INTERNET, PERO SI ERES CONSTANTE Y TRABAJAS DURO EN
-        TEAMPLATINO PODRÁS APRENDER A DAR TUS PRIMEROS PASOS
+        NO EXISTE UNA FÓRMULA MÁGICA PARA GANAR DINERO EN INTERNET, PERO SI MUCHO VENDEHUMO,
+        SI ERES CONSTANTE Y TRABAJAS DURO EN ESTOS SITIOS PODRÁS DAR TUS PRIMEROS PASOS
 
 
         <br><br>
-        <img src="static/logo.png">
+        <img src="static/logo.png" style="margin:10px 0"><br>
+        <img src="static/logo.png" style="margin:10px 0"><br>
+        <img src="static/logo.png" style="margin:10px 0"><br>
+        <img src="static/logo.png" style="margin:10px 0">
 
 
         <br><br>
-        <!--<button onclick="location.reload();">¿REPETIR?</button>-->
-        <br>
+
         <button onclick="share()">COMPARTIR</button>
         <br>
-        <button onclick="download()">DESCARGAR PDF</button>
+        <button onclick="credits()">CREDITOS</button>
+
+
+
+    </div>
+
+
+
+
+
+    <div id="credits"
+        style="overflow-y:scroll;padding:20px;font-size:35px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
+
+
+        <span style="color:#00ff00">CRÉDITOS</span>
+
+
+        <br><br>
+        Álvaro Saez (Chuiso)<br>
+        Rubén Alonso<br>
+        Álvaro Peña<br>
+        Luis Villanueva<br>
+        ???<br>
+        ???<br>
+        ???<br>
+        ???
+
+        <br><br>
+
+        <button onclick="share()">COMPARTIR</button>
+        <br>
+        <button onclick="$('#credits').hide();$('#result2').show();">VOLVER</button>
+
 
 
     </div>
@@ -824,7 +858,10 @@
             window.open('http://google.es');
         }
 
-
+        function credits() {
+            $('#result2').hide();
+            $('#credits').show();
+        }
 
 
 
