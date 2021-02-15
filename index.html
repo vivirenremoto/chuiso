@@ -168,7 +168,7 @@
 
         <div style="color:#00ff00">CHUISO Y EL EXCEL LEGENDARIO</div>
 
-        <iframe width="560" style="max-width:100%;margin:20px 0;" height="315"
+        <iframe id="video" width="560" style="max-width:100%;margin:20px 0;" height="315"
             src="https://www.youtube.com/embed/HdG_i8ZvvZw?rel=0" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
@@ -193,7 +193,8 @@
 
         <br><br>
 
-        <img src="static/item.png" width="150" height="150" onclick="$('#result1').hide();$('#result2').show();">
+        <img src="static/item.png" style="cursor:pointer;" width="150" height="150"
+            onclick="$('#result1').hide();$('#result2').show();">
 
 
         <br><br>
@@ -216,7 +217,7 @@
 
         <br><br>
 
-        <button onclick="share()">COMPARTIR</button>
+        <button onclick="music.pause();share();">COMPARTIR</button>
         <br>
         <button onclick="credits()">CRÉDITOS</button>
 
@@ -259,7 +260,7 @@
 
         <br><br>
 
-        <button onclick="share()">COMPARTIR</button>
+        <button onclick="music.pause();share()">COMPARTIR</button>
         <br>
         <button onclick="$('#credits').hide();$('#result2').show();">VOLVER</button>
 
@@ -623,6 +624,7 @@
 
             music.play();
 
+            $('#video').remove();
             $('#intro').hide();
             $('#game').show();
             drawStage();
@@ -855,7 +857,7 @@
         }
 
         function share() {
-            music.pause();
+
             window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&tw_p=tweetbutton&url=' + document.location.href);
         }
 
