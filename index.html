@@ -227,12 +227,12 @@
         <br><br>
 
         <img src="static/item.png" style="cursor:pointer;" width="150" height="150"
-            onclick="$('#result1').hide();$('#result2').show();">
+            onclick="confetti.stop();$('#result1').hide();$('#result2').show();">
 
 
         <br><br>
 
-        <button onclick="$('#result1').hide();$('#result2').show();">
+        <button onclick="confetti.stop();$('#result1').hide();$('#result2').show();">
             ABRIR EXCEL
         </button>
 
@@ -257,14 +257,16 @@
         <br><br>
 
 
-        <button onclick="window.open('https://teamplatino.com/')">teamplatino</button>
 
-        <button onclick="window.open('https://www.webpositeracademy.com/master-seo/')">webpositer</button>
-        <button onclick="window.open('https://posonty.es/')">posonty</button>
-        <button onclick="window.open('https://quondos.com/matricula/')">quondos</button>
-        <button onclick="window.open('https://chorri.club/')">chorriclub</button>
-        <button onclick="window.open('https://www.patreon.com/alexnavarro')">vivirdelared</button>
-        <button onclick="window.open('https://sabandijers.club/')">sabandijers</button>
+
+        <button onclick="music.pause();window.open('https://teamplatino.com/')">teamplatino</button>
+
+        <button onclick="music.pause();window.open('https://www.webpositeracademy.com/master-seo/')">webpositer</button>
+        <button onclick="music.pause();window.open('https://posonty.es/')">posonty</button>
+        <button onclick="music.pause();window.open('https://quondos.com/matricula/')">quondos</button>
+        <button onclick="music.pause();window.open('https://chorri.club/')">chorriclub</button>
+        <button onclick="music.pause();window.open('https://www.patreon.com/alexnavarro')">vivirdelared</button>
+        <button onclick="music.pause();window.open('https://sabandijers.club/')">sabandijers</button>
 
 
 
@@ -810,6 +812,11 @@
 
                         $('#result1').show();
 
+
+                        jQuery.getScript('https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js', function () {
+                            confetti.start();
+
+                        });
 
                     } else {
 
