@@ -175,7 +175,23 @@
         <br>
         <button onclick="startGame()">JUGAR</button><br>
 
+
+        <button onclick="openCharacter()">PERSONAJE</button><br>
+
         <button onclick="share()">COMPARTIR</button>
+    </div>
+
+
+
+    <div id="characters"
+        style="overflow-y:scroll;padding:20px;font-size:50px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
+
+        <span style="color:#00ff00;">PERSONAJE</span>
+
+        <br>
+
+        <div id="characters_list"></div>
+
     </div>
 
 
@@ -206,7 +222,7 @@
 
     </div>
 
-    credits
+
 
     <div id="result2"
         style="overflow-y:scroll;padding:20px;font-size:35px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
@@ -377,6 +393,43 @@
 
 
 
+        var selected_char = 'chuiso';
+
+        var characters = [];
+        characters.push('chuiso');
+        characters.push('luis villanueva');
+        characters.push('josma');
+        characters.push('david cuesta');
+        characters.push('david moral');
+        characters.push('estela franco');
+        characters.push('alex navarro');
+        characters.push('noelia regalado');
+        characters.push('ruben alonso');
+        characters.push('lucia y el seo');
+        characters.push('posonty');
+        characters.push('campamento web');
+
+
+        character_button = '';
+        for (var i = 0; i < characters.length; i++) {
+            character_button += '<button style="width:100%;" onclick="selectCharacter(this)">' + characters[i] + '</button>';
+        }
+        $('#characters_list').html(character_button);
+
+
+
+        function selectCharacter(obj) {
+            selected_char = $(obj).html().replace(/ /g, '_').toLowerCase();
+            $('#characters').hide();
+            $('#intro').show();
+            startGame();
+        }
+
+        function openCharacter() {
+            $('#characters').show();
+            $('#intro').hide();
+        }
+
         function drawStage() {
 
             got_item = false;
@@ -459,6 +512,8 @@
                 'top': $('table tr:eq(' + (player_row) + ') td:first').offset().top + 'px',
                 'left': $('table tr:eq(' + (player_row) + ') td:eq(' + (player_col) + ')').offset().left + 'px',
             }, 1);
+
+            $('.player').css('background-image', "url('static/characters/" + selected_char + ".jpg')");
 
 
 
