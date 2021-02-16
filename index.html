@@ -20,7 +20,7 @@
     <link rel="prefetch" href="static/ded.mp3" />
     <link rel="prefetch" href="static/door.mp3" />
     <link rel="prefetch" href="static/player.png" />
-    <link rel="prefetch" href="static/enemy5.jpg" />
+    <link rel="prefetch" href="static/enemy6.jpg" />
     <link rel="prefetch" href="static/item.png" />
     <link rel="prefetch" href="static/floor.png" />
     <link rel="prefetch" href="static/door_closed.png" />
@@ -113,7 +113,7 @@
         }
 
         .enemy {
-            background-image: url('static/enemy5.jpg');
+            background-image: url('static/enemy6.jpg');
             z-index: 2;
         }
 
@@ -134,13 +134,14 @@
             color: white;
             background: black;
             padding: 5px 30px;
-            display: inline-block;
+            display: block;
             font-size: 30px;
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
             text-transform: uppercase;
             width: 250px;
+            margin: auto;
             margin-bottom: 15px;
         }
 
@@ -191,10 +192,10 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <br>
-        <button onclick="startGame()">JUGAR</button><br>
+        <button onclick="startGame()">JUGAR</button>
 
 
-        <button onclick="openCharacter()">PERSEONAJE</button><br>
+        <button onclick="openCharacter()">PERSEONAJE</button>
 
         <button onclick="share()">COMPARTIR</button>
     </div>
@@ -251,10 +252,7 @@
 
         <button onclick="music.pause();share();">COMPARTIR</button>
         <button onclick="location.reload()">¿REPETIR?</button>
-        <!--
-        <br>
-        <button onclick="credits()">CRÉDITOS</button>
-        -->
+
 
         <br><br>
 
