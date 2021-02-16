@@ -405,17 +405,18 @@
 
         var characters = [];
         characters.push('chuiso');
-        characters.push('luis villanueva');
-        characters.push('josma');
+        characters.push('alex navarro');
+        characters.push('alvaro peña');
+        characters.push('campamento web');
         characters.push('david cuesta');
         characters.push('david moral');
         characters.push('estela franco');
-        characters.push('alex navarro');
-        characters.push('noelia regalado');
-        characters.push('ruben alonso');
+        characters.push('josma');
         characters.push('lucia y el seo');
+        characters.push('luis villanueva');
+        characters.push('noelia regalado');
         characters.push('posonty');
-        characters.push('campamento web');
+        characters.push('ruben alonso');
 
 
         character_button = '';
@@ -766,14 +767,8 @@
 
                 sound_item.play();
 
-                //setTimeout(function () {
-                $('.player').hide();
 
 
-                //$('.stairs').remove();
-                //$('.enemy').remove();
-                //$('.door').remove();
-                //$('td').css('background-color', 'black');
 
                 is_ded = true;
                 is_moving = true;
@@ -784,7 +779,10 @@
 
 
                 setTimeout(function () {
-                    //$('#game').hide();
+
+
+                    $('.player').hide();
+
 
                     if (current_stage > stages.length) {
 
@@ -795,7 +793,6 @@
                     } else {
 
 
-                        //$('#game').show();
 
                         drawStage();
 
@@ -808,7 +805,6 @@
 
 
 
-                    //}, 500);
                 }, 1000);
 
 
@@ -852,14 +848,6 @@
 
 
 
-
-                /*
-                if( player_col == (col+1) ){
-                    moveLeft();
-                }else if( player_col == (col-1) ){
-                    moveRight();
-                }
-                */
 
 
 
