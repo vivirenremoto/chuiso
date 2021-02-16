@@ -145,6 +145,17 @@
         }
 
 
+        #characters_list button {
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 100%;
+            width: 380px;
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media screen and (min-width: 480px) {
             table {
                 width: 480px;
@@ -193,7 +204,7 @@
     <div id="characters"
         style="overflow-y:scroll;padding:20px;font-size:50px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
 
-        <span style="color:#00ff00;">PERSONAJE</span>
+        <div style="color:#00ff00;">PERSONAJE</div>
 
         <br>
 
@@ -241,8 +252,10 @@
         <br><br>
 
         <button onclick="music.pause();share();">COMPARTIR</button>
+        <!--
         <br>
         <button onclick="credits()">CRÉDITOS</button>
+        -->
 
         <br><br>
 
@@ -425,14 +438,17 @@
 
         character_button = '';
         for (var i = 0; i < characters.length; i++) {
-            character_button += '<button style="width:100%;" onclick="selectCharacter(this)">' + characters[i] + '</button>';
+
+            var character_slug = characters[i].replace(/ /g, '_').toLowerCase();
+
+            character_button += '<button style="background-image:url(\'static/characters/' + character_slug + '.jpg\')" data-slug="' + character_slug + '" onclick="selectCharacter(this)">' + characters[i] + '</button>';
         }
         $('#characters_list').html(character_button);
 
 
 
         function selectCharacter(obj) {
-            selected_char = $(obj).html().replace(/ /g, '_').toLowerCase();
+            selected_char = $(obj).data('slug');
             $('#characters').hide();
             $('#intro').show();
             startGame();
