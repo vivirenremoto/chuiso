@@ -76,6 +76,10 @@
                             supported by Chrome, Edge, Opera and Firefox */
         }
 
+        a {
+            color: white;
+            text-decoration: none;
+        }
 
         body {
             touch-action: pan-x pan-y;
@@ -198,7 +202,7 @@
         <div style="color:#00ff00">CHUISO Y EL EXCEL LEGENDARIO</div>
 
         <iframe id="video" width="560" style="border:1px white solid;max-width:100%;margin:20px 0;" height="315"
-            src="https://www.youtube.com/embed/-ZBOjemPP0M?rel=0" frameborder="0"
+            src="https://www.youtube.com/embed/W2HBD5yPp9k?rel=0" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <br>
@@ -208,6 +212,7 @@
         <button onclick="openCharacter()">PER·SEO·NAJE</button>
 
         <button onclick="share()">COMPARTIR</button>
+        <button onclick="credits()">CREDITOS</button>
     </div>
 
 
@@ -272,11 +277,13 @@
         <button onclick="music.pause();window.open('https://teamplatino.com/')">teamplatino</button>
 
         <button onclick="music.pause();window.open('https://www.webpositeracademy.com/master-seo/')">webpositer</button>
-        <button onclick="music.pause();window.open('https://posonty.es/')">posonty</button>
-        <button onclick="music.pause();window.open('https://quondos.com/matricula/')">quondos</button>
         <button onclick="music.pause();window.open('https://chorri.club/')">chorriclub</button>
-        <button onclick="music.pause();window.open('https://www.patreon.com/alexnavarro')">vivirdelared</button>
+        <button onclick="music.pause();window.open('https://quondos.com/matricula/')">quondos</button>
         <button onclick="music.pause();window.open('https://sabandijers.club/')">sabandijers</button>
+        <button onclick="music.pause();window.open('https://posonty.es/')">posonty</button>
+        <button onclick="music.pause();window.open('https://triburemota.com/')">triburemota</button>
+        <button onclick="music.pause();window.open('https://www.patreon.com/alexnavarro')">vivirdelared</button>
+        <button onclick="music.pause();window.open('https://all4marketplaces.com')">all4marketplaces</button>
 
 
 
@@ -299,23 +306,35 @@
 
 
         <br><br>
-        Álvaro Saez (Chuiso)<br>
-        Rubén Alonso<br>
-        Álvaro Peña<br>
-        Luis Villanueva<br>
-        Josma<br>
-        Posonty<br>
-        Jordi Ordoñez<br>
-        ???<br>
-        ???<br>
-        ???<br>
-        ???
+
+
+        <a href="https://chuiso.com" target="_blank">Álvaro Saez (Chuiso)</a><br>
+        <a href="https://vivirdelared.com" target="_blank">Alex Navarro</a><br>
+        <a href="https://isocialweb.agency" target="_blank">Álvaro Peña</a><br>
+        <a href="https://carlosortega.page" target="_blank">Carlos Ortega</a><br>
+        <a href="https://posonty.es" target="_blank">Christian Gallegos</a><br>
+        <a href="https://davidcuesta.es" target="_blank">David Cuesta</a><br>
+        <a href="https://alaronastudio.com" target="_blank">David Moral</a><br>
+        <a href="https://campamentoweb.com" target="_blank">Emilio García</a><br>
+        <a href="https://estelafranco.com" target="_blank">Estela Franco</a><br>
+        <a href="https://dobleseo.pro" target="_blank">Eva Olivares</a><br>
+        <a href="https://jordiob.com" target="_blank">Jordi Ordoñez</a><br>
+        <a href="https://jos.ma" target="_blank">Josma</a><br>
+        <a href="https://luciayelseo.com" target="_blank">Lucia y el SEO</a><br>
+        <a href="https://webpositer.com" target="_blank">Luis Villanueva</a><br>
+        <a href="https://twitter.com/Marc__Cruells" target="_blank">Marc Cruells</a><br>
+        <a href="https://twitter.com/MartAttack22" target="_blank">Marta Arroyo</a><br>
+        <a href="https://mjcachon.com" target="_blank">MJ Cachón</a><br>
+        <a href="https://seoforceagency.com" target="_blank">Noelia Regalado</a><br>
+        <a href="https://pedro-seo.com" target="_blank">PedroSEO</a><br>
+        <a href="https://miposicionamientoweb.es" target="_blank">Ruben Alonso</a><br>
+        <a href="https://victormisa.com" target="_blank">Victor Misa</a>
+
 
         <br><br>
 
+        <button onclick="closeCredits()">VOLVER</button>
         <button onclick="music.pause();share()">COMPARTIR</button>
-        <br>
-        <button onclick="$('#credits').hide();$('#result2').show();">VOLVER</button>
 
 
 
@@ -434,7 +453,7 @@
         characters.push('alex navarro');
         characters.push('alvaro peña');
         characters.push('carlos ortega');
-        characters.push('campamento web');
+        characters.push('emilio garcia');
         characters.push('david cuesta');
         characters.push('david moral');
         characters.push('estela franco');
@@ -446,7 +465,7 @@
         characters.push('mj cachon');
         characters.push('noelia regalado');
         characters.push('pedroseo');
-        characters.push('posonty');
+        characters.push('christian gallegos');
         characters.push('ruben alonso');
         characters.push('victor misa');
 
@@ -971,6 +990,17 @@
         function credits() {
             $('#result2').hide();
             $('#credits').show();
+        }
+
+        function closeCredits() {
+            $('#credits').hide();
+
+            if (current_stage == 1) {
+                $('#intro').show();
+            } else {
+                $('#result2').show();
+
+            }
         }
 
 
