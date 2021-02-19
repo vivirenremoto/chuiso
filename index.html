@@ -205,7 +205,7 @@
         <button onclick="startGame()">JUGAR</button>
 
 
-        <button onclick="openCharacter()">PERSEONAJE</button>
+        <button onclick="openCharacter()">PER·SEO·NAJE</button>
 
         <button onclick="share()">COMPARTIR</button>
     </div>
@@ -215,7 +215,7 @@
     <div id="characters"
         style="overflow-y:scroll;padding:20px;font-size:50px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
 
-        <div style="color:#00ff00;margin-bottom:20px;">PERSEONAJE</div>
+        <div style="color:#00ff00;margin-bottom:20px;">PER·SEO·NAJE</div>
 
         <div id="characters_list"></div>
 
@@ -237,12 +237,12 @@
         <br><br>
 
         <img src="static/item.png" style="cursor:pointer;" width="150" height="150"
-            onclick="confetti.stop();$('#result1').hide();$('#result2').show();">
+            onclick="$('#result1').hide();$('#result2').show();">
 
 
         <br><br>
 
-        <button onclick="confetti.stop();$('#result1').hide();$('#result2').show();">
+        <button onclick="$('#result1').hide();$('#result2').show();">
             ABRIR EXCEL
         </button>
 
@@ -433,16 +433,22 @@
         characters.push('chuiso');
         characters.push('alex navarro');
         characters.push('alvaro peña');
+        characters.push('carlos ortega');
         characters.push('campamento web');
         characters.push('david cuesta');
         characters.push('david moral');
         characters.push('estela franco');
+        characters.push('eva olivares');
         characters.push('josma');
         characters.push('lucia y el seo');
         characters.push('luis villanueva');
+        characters.push('marta arroyo');
+        characters.push('mj cachon');
         characters.push('noelia regalado');
+        characters.push('pedroseo');
         characters.push('posonty');
         characters.push('ruben alonso');
+        characters.push('victor misa');
 
 
         character_button = '';
@@ -825,6 +831,10 @@
 
                         jQuery.getScript('https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js', function () {
                             confetti.start();
+
+                            setTimeout(function () {
+                                confetti.stop();
+                            }, 2000);
 
                         });
 
