@@ -226,6 +226,7 @@
 
         <div id="characters_list"></div>
 
+
     </div>
 
 
@@ -244,12 +245,12 @@
         <br><br>
 
         <img src="static/item.png" style="cursor:pointer;" width="150" height="150"
-            onclick="$('#result1').hide();$('#result2').show();">
+            onclick="music.pause();$('#result1').hide();$('#result2').show();">
 
 
         <br><br>
 
-        <button onclick="$('#result1').hide();$('#result2').show();">
+        <button onclick="music.pause();$('#result1').hide();$('#result2').show();">
             ABRIR EXCEL
         </button>
 
@@ -262,36 +263,40 @@
         style="overflow-y:scroll;padding:20px;font-size:35px;text-align:center;color:white;position:fixed;left:0;right:0;top:0;bottom:0;display:none;background:black;">
 
 
-        SIENTO DECIRTE QUE NO EXISTE UNA FÓRMULA MÁGICA PARA GANAR DINERO EN INTERNET, PERO SI MUCHOS VENDEHUMOS.
-        SI ERES CONSTANTE Y TRABAJAS DURO EN ESTOS SITIOS PODRÁS DAR TUS PRIMEROS PASOS
+        <div style="text-align:right;line-height:25px;"><a href="https://twitter.com/vivirenremoto" target="_blank"
+                style="font-size:30px;color:white;text-decoration:none;">by
+                @vivirenremoto</a></div>
+
+        <br>
+
+        SIENTO DECIRTE QUE NO EXISTE UNA FÓRMULA MÁGICA PARA GANAR DINERO EN INTERNET, PERO SI HAY MUCHOS VENDEHUMOS.
+        SI ERES CONSTANTE Y TRABAJADOR EN ESTOS SITIOS PODRÁS DAR TUS PRIMEROS PASOS
+
+
 
         <br><br>
 
-        <button onclick="music.pause();share();">COMPARTIR</button>
+
+
+
+        <a href="https://teamplatino.com/" target="_blank" class="button">teamplatino</a>
+
+        <a href="https://www.webpositeracademy.com/master-seo/" target="_blank" class="button">webpositer</a>
+        <a href="https://chorri.club/" target="_blank" class="button">chorriclub</a>
+        <a href="https://quondos.com/matricula/" target="_blank" class="button">quondos</a>
+        <a href="https://sabandijers.club/" target="_blank" class="button">sabandijers</a>
+        <a href="https://posonty.es/" target="_blank" class="button">posonty</a>
+        <a href="https://triburemota.com/" target="_blank" class="button">triburemota</a>
+        <a href="https://www.patreon.com/alexnavarro" target="_blank" class="button">vivirdelared</a>
+        <a href="https://all4marketplaces.com" target="_blank" class="button">all4marketplaces</a>
+
+        <br><br>
+
+        <button onclick="share();">COMPARTIR</button>
+        <button onclick="credits()">CRÉDITOS</button>
         <button onclick="location.reload()">¿REPETIR?</button>
 
-
         <br><br>
-
-
-
-
-        <a href="https://teamplatino.com/" target="_blank" class="button" onclick="music.pause();">teamplatino</a>
-
-        <a href="https://www.webpositeracademy.com/master-seo/" target="_blank" class="button"
-            onclick="music.pause();">webpositer</a>
-        <a href="https://chorri.club/" target="_blank" class="button" onclick="music.pause();">chorriclub</a>
-        <a href="https://quondos.com/matricula/" target="_blank" class="button" onclick="music.pause();">quondos</a>
-        <a href="https://sabandijers.club/" target="_blank" class="button" onclick="music.pause();">sabandijers</a>
-        <a href="https://posonty.es/" target="_blank" class="button" onclick="music.pause();">posonty</a>
-        <a href="https://triburemota.com/" target="_blank" class="button" onclick="music.pause();">triburemota</a>
-        <a href="https://www.patreon.com/alexnavarro" target="_blank" class="button"
-            onclick="music.pause();">vivirdelared</a>
-        <a href="https://all4marketplaces.com" target="_blank" class="button"
-            onclick="music.pause();">all4marketplaces</a>
-
-
-
 
 
 
@@ -360,9 +365,9 @@
         <br><br>
 
         <button onclick="closeCredits()">VOLVER</button>
-        <button onclick="music.pause();share()">COMPARTIR</button>
+        <button onclick="share()">COMPARTIR</button>
 
-
+        <br><br>
 
     </div>
 
@@ -1016,10 +1021,7 @@
             window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&tw_p=tweetbutton&url=' + document.location.href);
         }
 
-        function download() {
-            music.pause();
-            window.open('http://google.es');
-        }
+
 
         function credits() {
             $('#result2').hide();
